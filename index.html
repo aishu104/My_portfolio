@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akella Lakshmi Aiswarya — AI & ML Engineer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- LOADING SCREEN -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">ALA</div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+      <div class="loader-text">Initializing AI Systems...</div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-brand">ALA<span class="dot">.</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certs</a></li>
+      <li><a href="#journey">Journey</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button id="theme-toggle" aria-label="Toggle theme">
+        <span class="theme-icon">☀</span>
+      </button>
+      <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Hire Me</button>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#about" class="mob-link">About</a>
+    <a href="#skills" class="mob-link">Skills</a>
+    <a href="#projects" class="mob-link">Projects</a>
+    <a href="#certifications" class="mob-link">Certs</a>
+    <a href="#journey" class="mob-link">Journey</a>
+    <a href="#contact" class="mob-link">Contact</a>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero">
+    <canvas id="particle-canvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Available for Opportunities
+      </div>
+      <h1 class="hero-name">
+        <span class="name-line reveal-up">Akella Lakshmi</span>
+        <span class="name-line reveal-up delay-1">Aiswarya</span>
+      </h1>
+      <div class="hero-role">
+        <span class="role-prefix">I build</span>
+        <span class="typed-text" id="typed"></span>
+        <span class="cursor">|</span>
+      </div>
+      <p class="hero-tagline">Building intelligent solutions through Artificial Intelligence, Machine Learning, and Full Stack Development.</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">Explore Projects</a>
+        <a href="#" class="btn btn-glass" id="resume-btn">Download Resume</a>
+        <a href="#contact" class="btn btn-outline">Contact Me</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-val">9.18</span>
+          <span class="stat-label">CGPA</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-val">2+</span>
+          <span class="stat-label">AI Projects</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-val">7+</span>
+          <span class="stat-label">Certifications</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-val">15+</span>
+          <span class="stat-label">Technologies</span>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-dot"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-eyebrow">Who I Am</div>
+      <div class="about-grid">
+        <div class="about-visual reveal-left">
+          <div class="about-avatar">
+            <div class="avatar-ring ring1"></div>
+            <div class="avatar-ring ring2"></div>
+            <div class="avatar-core">
+              <span class="avatar-initials">ALA</span>
+            </div>
+          </div>
+          <div class="about-edu-card glass-card">
+            <div class="edu-label">Current Status</div>
+            <div class="edu-degree">B.Tech CSE (AI & ML)</div>
+            <div class="edu-detail">Final Year · <span class="neon-text">CGPA 9.18</span></div>
+          </div>
+        </div>
+        <div class="about-text reveal-right">
+          <h2 class="section-title">Turning Data Into <span class="gradient-text">Intelligence</span></h2>
+          <p class="about-para">I'm a final-year Computer Science (AI & ML) student who lives at the intersection of research and real-world application. My academic journey gave me rigorous foundations; my personal projects gave me the instinct to build things that actually work.</p>
+          <p class="about-para">I'm deeply passionate about the transformative power of AI — not as a buzzword, but as a craft. From predictive models to conversational agents, I gravitate toward problems where intelligent systems can create measurable human impact.</p>
+          <p class="about-para">Outside coursework, I pursue certifications, compete in challenges, and build projects that push my boundaries. I believe the best engineers are perpetual students.</p>
+          <div class="about-pillars">
+            <div class="pillar">
+              <div class="pillar-icon">⚡</div>
+              <div class="pillar-text">Fast Learner</div>
+            </div>
+            <div class="pillar">
+              <div class="pillar-icon">🧠</div>
+              <div class="pillar-text">Problem Solver</div>
+            </div>
+            <div class="pillar">
+              <div class="pillar-icon">🔬</div>
+              <div class="pillar-text">Research Driven</div>
+            </div>
+            <div class="pillar">
+              <div class="pillar-icon">🤝</div>
+              <div class="pillar-text">Team Player</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section section-alt">
+    <div class="container">
+      <div class="section-eyebrow">Tech Stack</div>
+      <h2 class="section-title centered">What I Work With</h2>
+
+      <div class="skill-filter">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="programming">Programming</button>
+        <button class="filter-btn" data-filter="web">Web Dev</button>
+        <button class="filter-btn" data-filter="ai">AI & ML</button>
+        <button class="filter-btn" data-filter="tools">Tools</button>
+      </div>
+
+      <div class="skills-grid" id="skills-grid">
+        <!-- Programming -->
+        <div class="skill-card glass-card" data-cat="programming">
+          <div class="skill-icon">🐍</div>
+          <div class="skill-name">Python</div>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-w="92"></div></div>
+          <div class="skill-cat-tag">Programming</div>
+        </div>
+        <div class="skill-card glass-card" data-cat="programming">
+          <div class="skill-icon">☕</div>
+          <div class="skill-name">Java</div>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-w="80"></div></div>
+          <div class="skill-cat-tag">Programming</div>
+        </div>
+        <div class="skill-card glass-card" data-cat="programming">
+          <div class="skill-icon">©️</div>
+          <div class="skill-name">C</div>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-w="75"></div></div>
+          <div class="skill-cat-tag">Programming</div>
+        </div>
+        <div class="skill-card glass-card" data-cat="programming">
+          <div class="skill-icon">🗃️</div>
+          <div class="skill-name">SQL</div>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-w="78"></div></div>
+          <div class="skill-cat-tag">Programming</div>
+        </div>
+        <div class="skill-card glass-card" data-cat="programming">
+          <div class="skill-icon">🟨</div>
+          <div class="skill-name">JavaScript</div>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-w="70"></div></div>
+          <div class="skill-cat-tag">Programming</div>
+        </div>
+        <!-- Web -->
+        <div class="skill-card glass-card" data-cat="web">
+          <div class="skill-icon">🌐</div>
+          <div class="skill-name">HTML</div>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-w="90"></div></div>
+          <div class="skill-cat-tag">Web Dev</div>
+        </div>
+        <div class="skill-card glass-card" data-cat="web">
+          <div class="skill-icon">🎨</div>
+          <div class="skill-name">CSS</div>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-w="85"></div></div>
+          <div class="skill-cat-tag">Web Dev</div>
+        </div>
+        <div class="skill-card glass-card" data-cat="web">
+          <div class="skill-icon">⚛️</div>
+          <div class="skill-name">React</div>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-w="72"></div></div>
+          <div class="skill-cat-tag">Web Dev</div>
+        </div>
+        <div class="skill-card glass-card" data-cat="web">
+          <div class="skill-icon">🟢</div>
+          <div class="skill-name">Node.js</div>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-w="65"></div></div>
+          <div class="skill-cat-tag">Web Dev</div>
+        </div>
+        <!-- AI -->
+        <div class="skill-card glass-card" data-cat="ai">
+          <div class="skill-icon">🤖</div>
+          <div class="skill-name">Machine Learning</div>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-w="82"></div></div>
+          <div class="skill-cat-tag">AI & ML</div>
+        </div>
+        <div class="skill-card glass-card" data-cat="ai">
+          <div class="skill-icon">🧠</div>
+          <div class="skill-name">Artificial Intelligence</div>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-w="80"></div></div>
+          <div class="skill-cat-tag">AI & ML</div>
+        </div>
+        <div class="skill-card glass-card" data-cat="ai">
+          <div class="skill-icon">📈</div>
+          <div class="skill-name">Predictive Analytics</div>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-w="76"></div></div>
+          <div class="skill-cat-tag">AI & ML</div>
+        </div>
+        <div class="skill-card glass-card" data-cat="ai">
+          <div class="skill-icon">📊</div>
+          <div class="skill-name">Data Analysis</div>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-w="78"></div></div>
+          <div class="skill-cat-tag">AI & ML</div>
+        </div>
+        <!-- Tools -->
+        <div class="skill-card glass-card" data-cat="tools">
+          <div class="skill-icon">🔀</div>
+          <div class="skill-name">Git</div>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-w="85"></div></div>
+          <div class="skill-cat-tag">Tools</div>
+        </div>
+        <div class="skill-card glass-card" data-cat="tools">
+          <div class="skill-icon">🐙</div>
+          <div class="skill-name">GitHub</div>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-w="87"></div></div>
+          <div class="skill-cat-tag">Tools</div>
+        </div>
+        <div class="skill-card glass-card" data-cat="tools">
+          <div class="skill-icon">💻</div>
+          <div class="skill-name">VS Code</div>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-w="95"></div></div>
+          <div class="skill-cat-tag">Tools</div>
+        </div>
+        <div class="skill-card glass-card" data-cat="tools">
+          <div class="skill-icon">🔬</div>
+          <div class="skill-name">Google Colab</div>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-w="88"></div></div>
+          <div class="skill-cat-tag">Tools</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-eyebrow">Featured Work</div>
+      <h2 class="section-title centered">AI Projects</h2>
+      <div class="projects-grid">
+
+        <div class="project-card glass-card reveal-up">
+          <div class="project-glow glow-blue"></div>
+          <div class="project-header">
+            <div class="project-icon">🏥</div>
+            <div class="project-number">01</div>
+          </div>
+          <h3 class="project-title">HealthAI</h3>
+          <p class="project-desc">An AI-powered healthcare assistant leveraging IBM Granite models to bridge the gap between patients and intelligent medical guidance. Combines NLP, predictive modeling, and health analytics in one unified platform.</p>
+          <div class="project-features">
+            <span class="feature-tag">Patient Chat</span>
+            <span class="feature-tag">Disease Prediction</span>
+            <span class="feature-tag">Treatment Recommendations</span>
+            <span class="feature-tag">Health Analytics</span>
+          </div>
+          <div class="project-tech">
+            <span class="tech-pill">Python</span>
+            <span class="tech-pill">IBM Granite</span>
+            <span class="tech-pill">ML</span>
+            <span class="tech-pill">NLP</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/aishu104" target="_blank" class="btn btn-ghost">GitHub →</a>
+            <a href="#" class="btn btn-glass btn-sm">Demo (Soon)</a>
+          </div>
+        </div>
+
+        <div class="project-card glass-card reveal-up delay-1">
+          <div class="project-glow glow-purple"></div>
+          <div class="project-header">
+            <div class="project-icon">🎯</div>
+            <div class="project-number">02</div>
+          </div>
+          <h3 class="project-title">DecidePlay AI</h3>
+          <p class="project-desc">An intelligent recommendation engine that delivers highly personalized decision support across domains. Harnesses machine learning to understand user context and surface relevant, ranked suggestions in real time.</p>
+          <div class="project-features">
+            <span class="feature-tag">Smart Recommendations</span>
+            <span class="feature-tag">Personalization Engine</span>
+            <span class="feature-tag">Decision Support</span>
+            <span class="feature-tag">Real-time Ranking</span>
+          </div>
+          <div class="project-tech">
+            <span class="tech-pill">Python</span>
+            <span class="tech-pill">React</span>
+            <span class="tech-pill">Recommendation ML</span>
+            <span class="tech-pill">Node.js</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/aishu104" target="_blank" class="btn btn-ghost">GitHub →</a>
+            <a href="#" class="btn btn-glass btn-sm">Demo (Soon)</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications" class="section section-alt">
+    <div class="container">
+      <div class="section-eyebrow">Credentials</div>
+      <h2 class="section-title centered">Certifications</h2>
+      <div class="certs-grid">
+
+        <div class="cert-card glass-card reveal-up">
+          <div class="cert-badge">🏆</div>
+          <div class="cert-body">
+            <div class="cert-issuer">Salesforce</div>
+            <div class="cert-title">Global Certification</div>
+          </div>
+          <div class="cert-glow"></div>
+        </div>
+
+        <div class="cert-card glass-card reveal-up delay-1">
+          <div class="cert-badge">🤖</div>
+          <div class="cert-body">
+            <div class="cert-issuer">SMART INTERNZ 2025</div>
+            <div class="cert-title">Generative AI with IBM Cloud</div>
+          </div>
+          <div class="cert-glow"></div>
+        </div>
+
+        <div class="cert-card glass-card reveal-up delay-2">
+          <div class="cert-badge">🥇</div>
+          <div class="cert-body">
+            <div class="cert-issuer">NPTEL</div>
+            <div class="cert-title">Gold Medal — Programming in Java</div>
+          </div>
+          <div class="cert-glow"></div>
+        </div>
+
+        <div class="cert-card glass-card reveal-up delay-3">
+          <div class="cert-badge">🥈</div>
+          <div class="cert-body">
+            <div class="cert-issuer">NPTEL</div>
+            <div class="cert-title">Silver Medal — Joy of Computing (Python)</div>
+          </div>
+          <div class="cert-glow"></div>
+        </div>
+
+        <div class="cert-card glass-card reveal-up">
+          <div class="cert-badge">📗</div>
+          <div class="cert-body">
+            <div class="cert-issuer">Infosys Springboard</div>
+            <div class="cert-title">C Programming</div>
+          </div>
+          <div class="cert-glow"></div>
+        </div>
+
+        <div class="cert-card glass-card reveal-up delay-1">
+          <div class="cert-badge">⭐</div>
+          <div class="cert-body">
+            <div class="cert-issuer">HackerRank</div>
+            <div class="cert-title">Python Basic & Golden Badge</div>
+          </div>
+          <div class="cert-glow"></div>
+        </div>
+
+        <div class="cert-card glass-card reveal-up delay-2">
+          <div class="cert-badge">🎓</div>
+          <div class="cert-body">
+            <div class="cert-issuer">Red Hat</div>
+            <div class="cert-title">Python Programming</div>
+          </div>
+          <div class="cert-glow"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section id="achievements" class="section">
+    <div class="container">
+      <div class="section-eyebrow">By the Numbers</div>
+      <h2 class="section-title centered">Achievements</h2>
+      <div class="stats-grid">
+        <div class="big-stat reveal-up">
+          <div class="big-num" data-target="9.18" data-decimal="2">0</div>
+          <div class="big-label">CGPA</div>
+          <div class="big-sub">Academic Excellence</div>
+        </div>
+        <div class="big-stat reveal-up delay-1">
+          <div class="big-num" data-target="2" data-suffix="+">0</div>
+          <div class="big-label">Projects</div>
+          <div class="big-sub">AI & Full-Stack</div>
+        </div>
+        <div class="big-stat reveal-up delay-2">
+          <div class="big-num" data-target="7" data-suffix="+">0</div>
+          <div class="big-label">Certifications</div>
+          <div class="big-sub">Industry & Academic</div>
+        </div>
+        <div class="big-stat reveal-up delay-3">
+          <div class="big-num" data-target="15" data-suffix="+">0</div>
+          <div class="big-label">Technologies</div>
+          <div class="big-sub">Learned & Applied</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOURNEY -->
+  <section id="journey" class="section section-alt">
+    <div class="container">
+      <div class="section-eyebrow">Career Timeline</div>
+      <h2 class="section-title centered">My Journey</h2>
+      <div class="timeline">
+
+        <div class="timeline-item reveal-left">
+          <div class="tl-dot"></div>
+          <div class="tl-year">2023</div>
+          <div class="tl-card glass-card">
+            <div class="tl-title">B.Tech Begins</div>
+            <div class="tl-desc">Started Computer Science Engineering with specialization in AI & ML. Laid the foundation in mathematics, programming, and algorithmic thinking.</div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal-right">
+          <div class="tl-dot"></div>
+          <div class="tl-year">2024</div>
+          <div class="tl-card glass-card">
+            <div class="tl-title">Programming Fundamentals</div>
+            <div class="tl-desc">Strengthened core programming in Python, Java, and C. Earned NPTEL Gold in Java and Silver in Python — validating skills through national-level exams.</div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal-left">
+          <div class="tl-dot"></div>
+          <div class="tl-year">2025</div>
+          <div class="tl-card glass-card">
+            <div class="tl-title">AI & ML Domain Entry</div>
+            <div class="tl-desc">Entered the AI & ML domain with formal coursework and certifications including Generative AI with IBM Cloud via SMART INTERNZ. Started building ML intuition.</div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal-right">
+          <div class="tl-dot"></div>
+          <div class="tl-year">2025</div>
+          <div class="tl-card glass-card">
+            <div class="tl-title">First AI Projects</div>
+            <div class="tl-desc">Transitioned from learning to building. Designed project architectures that combine multiple AI techniques. Salesforce Global Certification earned.</div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal-left">
+          <div class="tl-dot tl-dot-active"></div>
+          <div class="tl-year neon-text">2026</div>
+          <div class="tl-card glass-card tl-active">
+            <div class="tl-title">DecidePlay AI Launched</div>
+            <div class="tl-desc">Built a full AI recommendation platform with personalized decision support. Applied recommendation system algorithms, React frontend, and Node.js backend.</div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal-right">
+          <div class="tl-dot tl-dot-active"></div>
+          <div class="tl-year neon-text">2026</div>
+          <div class="tl-card glass-card tl-active">
+            <div class="tl-title">HealthAI Developed</div>
+            <div class="tl-desc">Deployed an IBM Granite-powered healthcare assistant with disease prediction and treatment recommendation capabilities. Integrated health analytics dashboard.</div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal-left">
+          <div class="tl-dot tl-dot-active"></div>
+          <div class="tl-year neon-text">2026</div>
+          <div class="tl-card glass-card tl-active">
+            <div class="tl-title">Full Stack Web Dev Intern</div>
+            <div class="tl-desc">Currently applying both AI and web engineering skills in a professional internship environment, bridging theory and industry practice.</div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal-right timeline-goal">
+          <div class="tl-dot tl-dot-future"></div>
+          <div class="tl-year">Future</div>
+          <div class="tl-card glass-card tl-goal">
+            <div class="tl-goal-badge">🎯 Goal</div>
+            <div class="tl-title">AI / ML Engineer</div>
+            <div class="tl-desc">Building production AI systems that solve meaningful problems at scale — at a company where engineering rigor and research ambition intersect.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-eyebrow">Get In Touch</div>
+      <h2 class="section-title centered">Let's Connect</h2>
+      <p class="contact-intro">Whether you're looking for an AI engineer, have a project idea, or just want to talk tech — my inbox is open.</p>
+
+      <div class="contact-grid">
+        <div class="contact-links reveal-left">
+          <a href="mailto:lakshmiaiswaryaakella@gmail.com" class="contact-link-card glass-card">
+            <div class="cl-icon">✉️</div>
+            <div class="cl-body">
+              <div class="cl-label">Email</div>
+              <div class="cl-value">lakshmiaiswaryaakella@gmail.com</div>
+            </div>
+            <div class="cl-arrow">→</div>
+          </a>
+          <a href="https://github.com/aishu104" target="_blank" class="contact-link-card glass-card">
+            <div class="cl-icon">🐙</div>
+            <div class="cl-body">
+              <div class="cl-label">GitHub</div>
+              <div class="cl-value">github.com/aishu104</div>
+            </div>
+            <div class="cl-arrow">→</div>
+          </a>
+          <a href="https://www.linkedin.com/in/lakshmi-aiswarya-akella-95053532a/" target="_blank" class="contact-link-card glass-card">
+            <div class="cl-icon">💼</div>
+            <div class="cl-body">
+              <div class="cl-label">LinkedIn</div>
+              <div class="cl-value">Lakshmi Aiswarya Akella</div>
+            </div>
+            <div class="cl-arrow">→</div>
+          </a>
+        </div>
+
+        <form class="contact-form glass-card reveal-right" id="contact-form">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Your name" required />
+          </div>
+          <div class="form-group">
+            <label for="email-input">Email</label>
+            <input type="email" id="email-input" placeholder="your@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" rows="4" placeholder="What would you like to discuss?" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary w-full">Send Message</button>
+          <div class="form-success" id="form-success">✓ Message sent! I'll get back to you soon.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">ALA<span class="dot">.</span></div>
+      <p class="footer-tagline">"Transforming ideas into intelligent solutions."</p>
+      <div class="footer-links">
+        <a href="mailto:lakshmiaiswaryaakella@gmail.com">Email</a>
+        <a href="https://github.com/aishu104" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/lakshmi-aiswarya-akella-95053532a/" target="_blank">LinkedIn</a>
+      </div>
+      <p class="footer-copy">© 2026 Akella Lakshmi Aiswarya. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <button id="back-top" aria-label="Back to top">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
