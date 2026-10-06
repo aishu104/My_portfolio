@@ -1,289 +1,1179 @@
-/* =========================================
+/* =========================================================
    ALA PORTFOLIO — SCRIPT.JS
-   ========================================= */
+   ========================================================= */
 
-// ── LOADER ──────────────────────────────────
-window.addEventListener('load', () => {
+
+/* =========================================================
+   LOADER
+   ========================================================= */
+
+window.addEventListener("load", () => {
+
+  const loader = document.getElementById("loader");
+
   setTimeout(() => {
-    document.getElementById('loader').classList.add('hidden');
+
+    if (loader) {
+      loader.classList.add("hidden");
+    }
+
     initParticles();
     initTyping();
-  }, 2200);
+
+  }, 1800);
+
 });
 
-// ── NAVBAR SCROLL ────────────────────────────
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 50);
-  document.getElementById('back-top').classList.toggle('visible', window.scrollY > 400);
-});
 
-// ── MOBILE MENU ──────────────────────────────
-const hamburger = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobile-menu');
-hamburger.addEventListener('click', () => {
-  mobileMenu.classList.toggle('open');
-});
-mobileMenu.querySelectorAll('.mob-link').forEach(link => {
-  link.addEventListener('click', () => mobileMenu.classList.remove('open'));
-});
+/* =========================================================
+   NAVBAR SCROLL
+   ========================================================= */
 
-// ── THEME TOGGLE ─────────────────────────────
-const themeToggle = document.getElementById('theme-toggle');
-const themeIcon = themeToggle.querySelector('.theme-icon');
-let isDark = true;
+const navbar = document.getElementById("navbar");
+const backTop = document.getElementById("back-top");
 
-themeToggle.addEventListener('click', () => {
-  isDark = !isDark;
-  document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
-  themeIcon.textContent = isDark ? '☀' : '🌙';
-});
+window.addEventListener("scroll", () => {
 
-// ── BACK TO TOP ──────────────────────────────
-document.getElementById('back-top').addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+  const scrolled = window.scrollY > 50;
+  const showBackTop = window.scrollY > 400;
 
-// ── SMOOTH NAV ───────────────────────────────
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', e => {
-    const target = document.querySelector(anchor.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
-  });
-});
-
-// ── TYPING ANIMATION ─────────────────────────
-function initTyping() {
-  const phrases = [
-    'AI Solutions',
-    'Machine Learning Models',
-    'Intelligent Systems',
-    'Full-Stack Applications',
-    'Healthcare AI',
-    'Recommendation Engines',
-  ];
-  const el = document.getElementById('typed');
-  let phraseIdx = 0, charIdx = 0, deleting = false;
-
-  function tick() {
-    const current = phrases[phraseIdx];
-    if (deleting) {
-      charIdx--;
-      el.textContent = current.slice(0, charIdx);
-      if (charIdx === 0) {
-        deleting = false;
-        phraseIdx = (phraseIdx + 1) % phrases.length;
-        setTimeout(tick, 400);
-        return;
-      }
-      setTimeout(tick, 40);
-    } else {
-      charIdx++;
-      el.textContent = current.slice(0, charIdx);
-      if (charIdx === current.length) {
-        deleting = true;
-        setTimeout(tick, 1800);
-        return;
-      }
-      setTimeout(tick, 70);
-    }
+  if (navbar) {
+    navbar.classList.toggle("scrolled", scrolled);
   }
-  tick();
+
+  if (backTop) {
+    backTop.classList.toggle("visible", showBackTop);
+  }
+
+});
+
+
+/* =========================================================
+   MOBILE MENU
+   ========================================================= */
+
+const hamburger = document.getElementById("hamburger");
+const mobileMenu = document.getElementById("mobile-menu");
+
+if (hamburger && mobileMenu) {
+
+  hamburger.addEventListener("click", () => {
+
+    mobileMenu.classList.toggle("open");
+
+    const isOpen =
+      mobileMenu.classList.contains("open");
+
+    hamburger.setAttribute(
+      "aria-expanded",
+      isOpen
+    );
+
+  });
+
+  mobileMenu
+    .querySelectorAll(".mob-link")
+    .forEach(link => {
+
+      link.addEventListener("click", () => {
+
+        mobileMenu.classList.remove("open");
+
+        hamburger.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+      });
+
+    });
+
 }
 
-// ── PARTICLE CANVAS ──────────────────────────
-function initParticles() {
-  const canvas = document.getElementById('particle-canvas');
-  const ctx = canvas.getContext('2d');
-  let W, H, particles = [];
 
-  function resize() {
-    W = canvas.width = canvas.offsetWidth;
-    H = canvas.height = canvas.offsetHeight;
+/* =========================================================
+   THEME TOGGLE
+   ========================================================= */
+
+const themeToggle =
+  document.getElementById("theme-toggle");
+
+const themeIcon =
+  document.querySelector(".theme-icon");
+
+let isDark = true;
+
+
+/* Load saved theme */
+
+const savedTheme =
+  localStorage.getItem("ala-theme");
+
+if (savedTheme === "light") {
+
+  isDark = false;
+
+  document.documentElement.setAttribute(
+    "data-theme",
+    "light"
+  );
+
+  if (themeIcon) {
+    themeIcon.textContent = "🌙";
   }
 
-  resize();
-  window.addEventListener('resize', () => { resize(); spawnParticles(); });
+}
 
-  function rnd(min, max) { return Math.random() * (max - min) + min; }
 
-  function createParticle() {
-    return {
-      x: rnd(0, W), y: rnd(0, H),
-      vx: rnd(-0.3, 0.3), vy: rnd(-0.3, 0.3),
-      r: rnd(1, 2.5),
-      alpha: rnd(0.2, 0.7),
-      hue: Math.random() < 0.5 ? 195 : 270, // blue or purple
-    };
-  }
+if (themeToggle) {
 
-  function spawnParticles() {
-    const count = Math.floor((W * H) / 12000);
-    particles = Array.from({ length: count }, createParticle);
-  }
+  themeToggle.addEventListener("click", () => {
 
-  spawnParticles();
+    isDark = !isDark;
 
-  let mouseX = W / 2, mouseY = H / 2;
-  canvas.addEventListener('mousemove', e => {
-    const rect = canvas.getBoundingClientRect();
-    mouseX = e.clientX - rect.left;
-    mouseY = e.clientY - rect.top;
-  });
+    const theme =
+      isDark ? "dark" : "light";
 
-  function draw() {
-    ctx.clearRect(0, 0, W, H);
+    document.documentElement.setAttribute(
+      "data-theme",
+      theme
+    );
 
-    // connections
-    for (let i = 0; i < particles.length; i++) {
-      for (let j = i + 1; j < particles.length; j++) {
-        const dx = particles[i].x - particles[j].x;
-        const dy = particles[i].y - particles[j].y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 120) {
-          ctx.beginPath();
-          ctx.strokeStyle = `rgba(0, 212, 255, ${0.08 * (1 - dist / 120)})`;
-          ctx.lineWidth = 0.5;
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.stroke();
-        }
-      }
+    localStorage.setItem(
+      "ala-theme",
+      theme
+    );
+
+    if (themeIcon) {
+      themeIcon.textContent =
+        isDark ? "☀" : "🌙";
     }
 
-    // particles
-    particles.forEach(p => {
-      // mouse repulsion
-      const dx = p.x - mouseX, dy = p.y - mouseY;
-      const dist = Math.sqrt(dx * dx + dy * dy);
-      if (dist < 100) {
-        p.vx += (dx / dist) * 0.04;
-        p.vy += (dy / dist) * 0.04;
+  });
+
+}
+
+
+/* =========================================================
+   BACK TO TOP
+   ========================================================= */
+
+if (backTop) {
+
+  backTop.addEventListener("click", () => {
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+
+  });
+
+}
+
+
+/* =========================================================
+   SMOOTH NAVIGATION
+   ========================================================= */
+
+document
+  .querySelectorAll('a[href^="#"]')
+  .forEach(anchor => {
+
+    anchor.addEventListener("click", event => {
+
+      const href =
+        anchor.getAttribute("href");
+
+      if (!href || href === "#") {
+        return;
       }
 
-      // damping
-      p.vx *= 0.98;
-      p.vy *= 0.98;
+      const target =
+        document.querySelector(href);
+
+      if (target) {
+
+        event.preventDefault();
+
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+
+      }
+
+    });
+
+  });
+
+
+/* =========================================================
+   TYPING ANIMATION
+   ========================================================= */
+
+function initTyping() {
+
+  const el =
+    document.getElementById("typed");
+
+  if (!el) return;
+
+
+  const phrases = [
+
+    "AI Solutions",
+    "Generative AI Applications",
+    "Machine Learning Models",
+    "AI Agentforce Solutions",
+    "Intelligent Systems",
+    "AI-Powered Applications"
+
+  ];
+
+
+  let phraseIndex = 0;
+  let charIndex = 0;
+
+  let deleting = false;
+
+
+  function tick() {
+
+    const current =
+      phrases[phraseIndex];
+
+
+    if (!deleting) {
+
+      charIndex++;
+
+      el.textContent =
+        current.substring(
+          0,
+          charIndex
+        );
+
+
+      if (charIndex >= current.length) {
+
+        deleting = true;
+
+        setTimeout(
+          tick,
+          1700
+        );
+
+        return;
+
+      }
+
+      setTimeout(
+        tick,
+        65
+      );
+
+    }
+
+    else {
+
+      charIndex--;
+
+      el.textContent =
+        current.substring(
+          0,
+          charIndex
+        );
+
+
+      if (charIndex <= 0) {
+
+        deleting = false;
+
+        phraseIndex =
+          (phraseIndex + 1) %
+          phrases.length;
+
+        setTimeout(
+          tick,
+          400
+        );
+
+        return;
+
+      }
+
+      setTimeout(
+        tick,
+        35
+      );
+
+    }
+
+  }
+
+
+  tick();
+
+}
+
+
+/* =========================================================
+   PARTICLE CANVAS
+   ========================================================= */
+
+function initParticles() {
+
+  const canvas =
+    document.getElementById(
+      "particle-canvas"
+    );
+
+  if (!canvas) return;
+
+
+  const ctx =
+    canvas.getContext("2d");
+
+  if (!ctx) return;
+
+
+  let W = 0;
+  let H = 0;
+
+  let particles = [];
+
+
+  function resize() {
+
+    const ratio =
+      window.devicePixelRatio || 1;
+
+    W =
+      canvas.offsetWidth;
+
+    H =
+      canvas.offsetHeight;
+
+
+    canvas.width =
+      W * ratio;
+
+    canvas.height =
+      H * ratio;
+
+    ctx.setTransform(
+      ratio,
+      0,
+      0,
+      ratio,
+      0,
+      0
+    );
+
+  }
+
+
+  function random(min, max) {
+
+    return Math.random() *
+      (max - min) + min;
+
+  }
+
+
+  function createParticle() {
+
+    return {
+
+      x: random(0, W),
+
+      y: random(0, H),
+
+      vx: random(-0.25, 0.25),
+
+      vy: random(-0.25, 0.25),
+
+      radius: random(0.8, 2),
+
+      alpha: random(0.2, 0.65),
+
+      hue:
+        Math.random() < .5
+          ? 195
+          : 270
+
+    };
+
+  }
+
+
+  function spawnParticles() {
+
+    const area =
+      W * H;
+
+    const count =
+      Math.min(
+        100,
+        Math.max(
+          25,
+          Math.floor(
+            area / 15000
+          )
+        )
+      );
+
+    particles =
+      Array.from(
+        {
+          length: count
+        },
+        createParticle
+      );
+
+  }
+
+
+  resize();
+  spawnParticles();
+
+
+  let mouseX =
+    W / 2;
+
+  let mouseY =
+    H / 2;
+
+
+  canvas.addEventListener(
+    "mousemove",
+    event => {
+
+      const rect =
+        canvas.getBoundingClientRect();
+
+      mouseX =
+        event.clientX -
+        rect.left;
+
+      mouseY =
+        event.clientY -
+        rect.top;
+
+    }
+  );
+
+
+  canvas.addEventListener(
+    "mouseleave",
+    () => {
+
+      mouseX = W / 2;
+      mouseY = H / 2;
+
+    }
+  );
+
+
+  window.addEventListener(
+    "resize",
+    () => {
+
+      resize();
+      spawnParticles();
+
+    }
+  );
+
+
+  function draw() {
+
+    ctx.clearRect(
+      0,
+      0,
+      W,
+      H
+    );
+
+
+    /* Connections */
+
+    for (
+      let i = 0;
+      i < particles.length;
+      i++
+    ) {
+
+      for (
+        let j = i + 1;
+        j < particles.length;
+        j++
+      ) {
+
+        const dx =
+          particles[i].x -
+          particles[j].x;
+
+        const dy =
+          particles[i].y -
+          particles[j].y;
+
+        const distance =
+          Math.sqrt(
+            dx * dx +
+            dy * dy
+          );
+
+
+        if (distance < 110) {
+
+          ctx.beginPath();
+
+          ctx.strokeStyle =
+            `rgba(
+              0,
+              212,
+              255,
+              ${0.07 *
+              (1 -
+                distance /
+                110)}
+            )`;
+
+          ctx.lineWidth = .5;
+
+          ctx.moveTo(
+            particles[i].x,
+            particles[i].y
+          );
+
+          ctx.lineTo(
+            particles[j].x,
+            particles[j].y
+          );
+
+          ctx.stroke();
+
+        }
+
+      }
+
+    }
+
+
+    /* Particles */
+
+    particles.forEach(p => {
+
+      const dx =
+        p.x - mouseX;
+
+      const dy =
+        p.y - mouseY;
+
+      const distance =
+        Math.sqrt(
+          dx * dx +
+          dy * dy
+        );
+
+
+      if (
+        distance > 0 &&
+        distance < 100
+      ) {
+
+        p.vx +=
+          (dx / distance) *
+          .025;
+
+        p.vy +=
+          (dy / distance) *
+          .025;
+
+      }
+
+
+      p.vx *= .985;
+      p.vy *= .985;
+
 
       p.x += p.vx;
       p.y += p.vy;
 
-      // wrap
-      if (p.x < 0) p.x = W;
-      if (p.x > W) p.x = 0;
-      if (p.y < 0) p.y = H;
-      if (p.y > H) p.y = 0;
+
+      if (p.x < 0)
+        p.x = W;
+
+      if (p.x > W)
+        p.x = 0;
+
+      if (p.y < 0)
+        p.y = H;
+
+      if (p.y > H)
+        p.y = 0;
+
 
       ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = `hsla(${p.hue}, 100%, 70%, ${p.alpha})`;
+
+      ctx.arc(
+        p.x,
+        p.y,
+        p.radius,
+        0,
+        Math.PI * 2
+      );
+
+      ctx.fillStyle =
+        `hsla(
+          ${p.hue},
+          100%,
+          70%,
+          ${p.alpha}
+        )`;
+
       ctx.fill();
+
     });
+
 
     requestAnimationFrame(draw);
+
   }
+
 
   draw();
+
 }
 
-// ── SCROLL REVEAL ────────────────────────────
-const revealEls = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right');
 
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, { threshold: 0.12 });
+/* =========================================================
+   SCROLL REVEAL
+   ========================================================= */
 
-revealEls.forEach(el => revealObserver.observe(el));
+const revealElements =
+  document.querySelectorAll(
+    ".reveal-up, .reveal-left, .reveal-right"
+  );
 
-// ── SKILL BARS ───────────────────────────────
-const skillBarObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.querySelectorAll('.skill-bar').forEach(bar => {
-        const w = bar.getAttribute('data-w');
-        bar.style.width = w + '%';
+
+const revealObserver =
+  new IntersectionObserver(
+    entries => {
+
+      entries.forEach(entry => {
+
+        if (
+          entry.isIntersecting
+        ) {
+
+          entry.target.classList.add(
+            "visible"
+          );
+
+        }
+
       });
-      skillBarObserver.unobserve(entry.target);
+
+    },
+    {
+      threshold: .1
     }
-  });
-}, { threshold: 0.1 });
+  );
 
-document.querySelectorAll('#skills-grid').forEach(grid => skillBarObserver.observe(grid));
 
-// ── SKILL FILTER ─────────────────────────────
-document.querySelectorAll('.filter-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
+revealElements.forEach(
+  element =>
+    revealObserver.observe(element)
+);
 
-    const filter = btn.getAttribute('data-filter');
-    document.querySelectorAll('.skill-card').forEach(card => {
-      const cat = card.getAttribute('data-cat');
-      if (filter === 'all' || cat === filter) {
-        card.classList.remove('hidden');
-      } else {
-        card.classList.add('hidden');
+
+/* =========================================================
+   SKILL BARS
+   ========================================================= */
+
+const skillGrid =
+  document.getElementById(
+    "skills-grid"
+  );
+
+
+if (skillGrid) {
+
+  const skillBarObserver =
+    new IntersectionObserver(
+      entries => {
+
+        entries.forEach(entry => {
+
+          if (
+            entry.isIntersecting
+          ) {
+
+            entry.target
+              .querySelectorAll(
+                ".skill-bar"
+              )
+              .forEach(bar => {
+
+                const width =
+                  bar.getAttribute(
+                    "data-w"
+                  );
+
+                bar.style.width =
+                  `${width}%`;
+
+              });
+
+
+            skillBarObserver.unobserve(
+              entry.target
+            );
+
+          }
+
+        });
+
+      },
+      {
+        threshold: .1
       }
-    });
-  });
+    );
+
+
+  skillBarObserver.observe(
+    skillGrid
+  );
+
+}
+
+
+/* =========================================================
+   SKILL FILTER
+   ========================================================= */
+
+const filterButtons =
+  document.querySelectorAll(
+    ".filter-btn"
+  );
+
+
+const skillCards =
+  document.querySelectorAll(
+    ".skill-card"
+  );
+
+
+filterButtons.forEach(button => {
+
+  button.addEventListener(
+    "click",
+    () => {
+
+      filterButtons.forEach(btn =>
+        btn.classList.remove(
+          "active"
+        )
+      );
+
+
+      button.classList.add(
+        "active"
+      );
+
+
+      const filter =
+        button.getAttribute(
+          "data-filter"
+        );
+
+
+      skillCards.forEach(card => {
+
+        const category =
+          card.getAttribute(
+            "data-cat"
+          );
+
+
+        if (
+          filter === "all" ||
+          category === filter
+        ) {
+
+          card.classList.remove(
+            "hidden"
+          );
+
+        }
+
+        else {
+
+          card.classList.add(
+            "hidden"
+          );
+
+        }
+
+      });
+
+    }
+  );
+
 });
 
-// ── COUNTER ANIMATION ────────────────────────
-function animateCounter(el) {
-  const target = parseFloat(el.getAttribute('data-target'));
-  const decimal = parseInt(el.getAttribute('data-decimal') || '0');
-  const suffix = el.getAttribute('data-suffix') || '';
-  const duration = 1800;
-  const start = performance.now();
 
-  function step(now) {
-    const progress = Math.min((now - start) / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3);
-    const value = target * eased;
-    el.textContent = decimal > 0
-      ? value.toFixed(decimal) + suffix
-      : Math.floor(value) + suffix;
-    if (progress < 1) requestAnimationFrame(step);
+/* =========================================================
+   COUNTER ANIMATION
+   ========================================================= */
+
+function animateCounter(element) {
+
+  const target =
+    parseFloat(
+      element.getAttribute(
+        "data-target"
+      )
+    );
+
+
+  const decimal =
+    parseInt(
+      element.getAttribute(
+        "data-decimal"
+      ) || "0"
+    );
+
+
+  const suffix =
+    element.getAttribute(
+      "data-suffix"
+    ) || "";
+
+
+  const duration =
+    1600;
+
+  const start =
+    performance.now();
+
+
+  function update(now) {
+
+    const progress =
+      Math.min(
+        (now - start) /
+        duration,
+        1
+      );
+
+
+    const eased =
+      1 -
+      Math.pow(
+        1 - progress,
+        3
+      );
+
+
+    const value =
+      target * eased;
+
+
+    if (decimal > 0) {
+
+      element.textContent =
+        value.toFixed(
+          decimal
+        ) + suffix;
+
+    }
+
+    else {
+
+      element.textContent =
+        Math.floor(
+          value
+        ) + suffix;
+
+    }
+
+
+    if (progress < 1) {
+
+      requestAnimationFrame(
+        update
+      );
+
+    }
+
   }
 
-  requestAnimationFrame(step);
+
+  requestAnimationFrame(
+    update
+  );
+
 }
 
-const counterObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      animateCounter(entry.target);
-      counterObserver.unobserve(entry.target);
+
+const counters =
+  document.querySelectorAll(
+    ".big-num"
+  );
+
+
+const counterObserver =
+  new IntersectionObserver(
+    entries => {
+
+      entries.forEach(entry => {
+
+        if (
+          entry.isIntersecting
+        ) {
+
+          animateCounter(
+            entry.target
+          );
+
+          counterObserver.unobserve(
+            entry.target
+          );
+
+        }
+
+      });
+
+    },
+    {
+      threshold: .3
     }
-  });
-}, { threshold: 0.3 });
+  );
 
-document.querySelectorAll('.big-num').forEach(el => counterObserver.observe(el));
 
-// ── CONTACT FORM ─────────────────────────────
-document.getElementById('contact-form').addEventListener('submit', e => {
-  e.preventDefault();
-  const btn = e.target.querySelector('button[type="submit"]');
-  btn.textContent = 'Sending...';
-  btn.disabled = true;
-  setTimeout(() => {
-    btn.textContent = 'Send Message';
-    btn.disabled = false;
-    document.getElementById('form-success').classList.add('show');
-    e.target.reset();
-    setTimeout(() => document.getElementById('form-success').classList.remove('show'), 4000);
-  }, 1200);
-});
+counters.forEach(counter =>
+  counterObserver.observe(counter)
+);
 
-// ── RESUME BUTTON ─────────────────────────────
-document.getElementById('resume-btn').addEventListener('click', e => {
-  e.preventDefault();
-  alert('Resume download coming soon! Please contact directly via email.');
-});
+
+/* =========================================================
+   CONTACT FORM
+   ========================================================= */
+
+const contactForm =
+  document.getElementById(
+    "contact-form"
+  );
+
+
+if (contactForm) {
+
+  contactForm.addEventListener(
+    "submit",
+    event => {
+
+      event.preventDefault();
+
+
+      const name =
+        document.getElementById(
+          "name"
+        ).value.trim();
+
+      const email =
+        document.getElementById(
+          "email"
+        ).value.trim();
+
+      const message =
+        document.getElementById(
+          "message"
+        ).value.trim();
+
+
+      if (
+        !name ||
+        !email ||
+        !message
+      ) {
+
+        return;
+
+      }
+
+
+      const button =
+        contactForm.querySelector(
+          'button[type="submit"]'
+        );
+
+
+      const success =
+        document.getElementById(
+          "form-success"
+        );
+
+
+      button.disabled = true;
+
+      button.textContent =
+        "Preparing Message...";
+
+
+      /*
+       * Frontend mail fallback.
+       * This opens the visitor's email client.
+       */
+
+      const subject =
+        encodeURIComponent(
+          `Portfolio Contact from ${name}`
+        );
+
+
+      const body =
+        encodeURIComponent(
+          `Name: ${name}\n` +
+          `Email: ${email}\n\n` +
+          `Message:\n${message}`
+        );
+
+
+      const mailto =
+        `mailto:lakshmiaiswaryaakella@gmail.com` +
+        `?subject=${subject}` +
+        `&body=${body}`;
+
+
+      setTimeout(() => {
+
+        window.location.href =
+          mailto;
+
+
+        button.disabled = false;
+
+        button.textContent =
+          "Send Message →";
+
+
+        if (success) {
+
+          success.classList.add(
+            "show"
+          );
+
+          setTimeout(() => {
+
+            success.classList.remove(
+              "show"
+            );
+
+          }, 5000);
+
+        }
+
+      }, 700);
+
+    }
+  );
+
+}
+
+
+/* =========================================================
+   RESUME BUTTON
+   ========================================================= */
+
+const resumeButton =
+  document.getElementById(
+    "resume-btn"
+  );
+
+
+if (resumeButton) {
+
+  resumeButton.addEventListener(
+    "click",
+    event => {
+
+      /*
+       * The resume button expects:
+       *
+       * resume.pdf
+       *
+       * to be placed in the same folder
+       * as index.html.
+       */
+
+      const resumePath =
+        resumeButton.getAttribute(
+          "href"
+        );
+
+
+      if (
+        !resumePath ||
+        resumePath === "#"
+      ) {
+
+        event.preventDefault();
+
+        alert(
+          "Please add your resume as 'resume.pdf' in the portfolio folder."
+        );
+
+      }
+
+    }
+  );
+
+}
+
+
+/* =========================================================
+   CLOSE MOBILE MENU WHEN CLICKING OUTSIDE
+   ========================================================= */
+
+document.addEventListener(
+  "click",
+  event => {
+
+    if (
+      mobileMenu &&
+      hamburger &&
+      mobileMenu.classList.contains(
+        "open"
+      )
+    ) {
+
+      const clickedInsideMenu =
+        mobileMenu.contains(
+          event.target
+        );
+
+      const clickedHamburger =
+        hamburger.contains(
+          event.target
+        );
+
+
+      if (
+        !clickedInsideMenu &&
+        !clickedHamburger
+      ) {
+
+        mobileMenu.classList.remove(
+          "open"
+        );
+
+      }
+
+    }
+
+  }
+);
