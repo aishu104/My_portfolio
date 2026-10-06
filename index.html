@@ -1,558 +1,1545 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Akella Lakshmi Aiswarya — AI & ML Engineer</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Akella Lakshmi Aiswarya | AI/ML & Salesforce Enthusiast</title>
+
+  <meta
+    name="description"
+    content="Akella Lakshmi Aiswarya - B.Tech CSE (AI & ML) student, Salesforce AI Agentforce Specialist, and aspiring AI/ML Engineer."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <!-- LOADING SCREEN -->
+  <!-- ================= LOADER ================= -->
   <div id="loader">
     <div class="loader-inner">
       <div class="loader-logo">ALA</div>
-      <div class="loader-bar"><div class="loader-fill"></div></div>
-      <div class="loader-text">Initializing AI Systems...</div>
+
+      <div class="loader-bar">
+        <div class="loader-fill"></div>
+      </div>
+
+      <p class="loader-text">Initializing AI Portfolio...</p>
     </div>
   </div>
 
-  <!-- NAVBAR -->
-  <nav id="navbar">
-    <div class="nav-brand">ALA<span class="dot">.</span></div>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#certifications">Certs</a></li>
-      <li><a href="#journey">Journey</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="nav-right">
-      <button id="theme-toggle" aria-label="Toggle theme">
-        <span class="theme-icon">☀</span>
-      </button>
-      <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Hire Me</button>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
 
-  <!-- MOBILE MENU -->
-  <div class="mobile-menu" id="mobile-menu">
+  <!-- ================= NAVBAR ================= -->
+  <header id="navbar">
+
+    <div class="container nav-inner">
+
+      <a href="#home" class="brand">
+        <span class="brand-bracket">&lt;</span>ALA<span class="brand-bracket">/&gt;</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#journey">Journey</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+          <span class="theme-icon">☀</span>
+        </button>
+
+        <a href="#contact" class="nav-cta">
+          Hire Me
+        </a>
+
+        <button id="hamburger" class="hamburger" aria-label="Open menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- ================= MOBILE MENU ================= -->
+  <div id="mobile-menu" class="mobile-menu">
+
     <a href="#about" class="mob-link">About</a>
     <a href="#skills" class="mob-link">Skills</a>
     <a href="#projects" class="mob-link">Projects</a>
-    <a href="#certifications" class="mob-link">Certs</a>
+    <a href="#certifications" class="mob-link">Certifications</a>
     <a href="#journey" class="mob-link">Journey</a>
     <a href="#contact" class="mob-link">Contact</a>
+
   </div>
 
-  <!-- HERO -->
-  <section id="hero">
-    <canvas id="particle-canvas"></canvas>
-    <div class="hero-content">
-      <div class="hero-badge">
-        <span class="badge-dot"></span>
-        Available for Opportunities
-      </div>
-      <h1 class="hero-name">
-        <span class="name-line reveal-up">Akella Lakshmi</span>
-        <span class="name-line reveal-up delay-1">Aiswarya</span>
-      </h1>
-      <div class="hero-role">
-        <span class="role-prefix">I build</span>
-        <span class="typed-text" id="typed"></span>
-        <span class="cursor">|</span>
-      </div>
-      <p class="hero-tagline">Building intelligent solutions through Artificial Intelligence, Machine Learning, and Full Stack Development.</p>
-      <div class="hero-actions">
-        <a href="#projects" class="btn btn-primary">Explore Projects</a>
-        <a href="#" class="btn btn-glass" id="resume-btn">Download Resume</a>
-        <a href="#contact" class="btn btn-outline">Contact Me</a>
-      </div>
-      <div class="hero-stats">
-        <div class="stat-item">
-          <span class="stat-val">9.18</span>
-          <span class="stat-label">CGPA</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <span class="stat-val">2+</span>
-          <span class="stat-label">AI Projects</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <span class="stat-val">7+</span>
-          <span class="stat-label">Certifications</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <span class="stat-val">15+</span>
-          <span class="stat-label">Technologies</span>
-        </div>
-      </div>
-    </div>
-    <div class="scroll-indicator">
-      <div class="scroll-dot"></div>
-    </div>
-  </section>
 
-  <!-- ABOUT -->
-  <section id="about" class="section">
-    <div class="container">
-      <div class="section-eyebrow">Who I Am</div>
-      <div class="about-grid">
-        <div class="about-visual reveal-left">
-          <div class="about-avatar">
-            <div class="avatar-ring ring1"></div>
-            <div class="avatar-ring ring2"></div>
-            <div class="avatar-core">
-              <span class="avatar-initials">ALA</span>
-            </div>
-          </div>
-          <div class="about-edu-card glass-card">
-            <div class="edu-label">Current Status</div>
-            <div class="edu-degree">B.Tech CSE (AI & ML)</div>
-            <div class="edu-detail">Final Year · <span class="neon-text">CGPA 9.18</span></div>
-          </div>
-        </div>
-        <div class="about-text reveal-right">
-          <h2 class="section-title">Turning Data Into <span class="gradient-text">Intelligence</span></h2>
-          <p class="about-para">I'm a final-year Computer Science (AI & ML) student who lives at the intersection of research and real-world application. My academic journey gave me rigorous foundations; my personal projects gave me the instinct to build things that actually work.</p>
-          <p class="about-para">I'm deeply passionate about the transformative power of AI — not as a buzzword, but as a craft. From predictive models to conversational agents, I gravitate toward problems where intelligent systems can create measurable human impact.</p>
-          <p class="about-para">Outside coursework, I pursue certifications, compete in challenges, and build projects that push my boundaries. I believe the best engineers are perpetual students.</p>
-          <div class="about-pillars">
-            <div class="pillar">
-              <div class="pillar-icon">⚡</div>
-              <div class="pillar-text">Fast Learner</div>
-            </div>
-            <div class="pillar">
-              <div class="pillar-icon">🧠</div>
-              <div class="pillar-text">Problem Solver</div>
-            </div>
-            <div class="pillar">
-              <div class="pillar-icon">🔬</div>
-              <div class="pillar-text">Research Driven</div>
-            </div>
-            <div class="pillar">
-              <div class="pillar-icon">🤝</div>
-              <div class="pillar-text">Team Player</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- ================= HERO ================= -->
+  <main>
 
-  <!-- SKILLS -->
-  <section id="skills" class="section section-alt">
-    <div class="container">
-      <div class="section-eyebrow">Tech Stack</div>
-      <h2 class="section-title centered">What I Work With</h2>
+    <section id="home" class="hero">
 
-      <div class="skill-filter">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="programming">Programming</button>
-        <button class="filter-btn" data-filter="web">Web Dev</button>
-        <button class="filter-btn" data-filter="ai">AI & ML</button>
-        <button class="filter-btn" data-filter="tools">Tools</button>
-      </div>
+      <canvas id="particle-canvas"></canvas>
 
-      <div class="skills-grid" id="skills-grid">
-        <!-- Programming -->
-        <div class="skill-card glass-card" data-cat="programming">
-          <div class="skill-icon">🐍</div>
-          <div class="skill-name">Python</div>
-          <div class="skill-bar-wrap"><div class="skill-bar" data-w="92"></div></div>
-          <div class="skill-cat-tag">Programming</div>
-        </div>
-        <div class="skill-card glass-card" data-cat="programming">
-          <div class="skill-icon">☕</div>
-          <div class="skill-name">Java</div>
-          <div class="skill-bar-wrap"><div class="skill-bar" data-w="80"></div></div>
-          <div class="skill-cat-tag">Programming</div>
-        </div>
-        <div class="skill-card glass-card" data-cat="programming">
-          <div class="skill-icon">©️</div>
-          <div class="skill-name">C</div>
-          <div class="skill-bar-wrap"><div class="skill-bar" data-w="75"></div></div>
-          <div class="skill-cat-tag">Programming</div>
-        </div>
-        <div class="skill-card glass-card" data-cat="programming">
-          <div class="skill-icon">🗃️</div>
-          <div class="skill-name">SQL</div>
-          <div class="skill-bar-wrap"><div class="skill-bar" data-w="78"></div></div>
-          <div class="skill-cat-tag">Programming</div>
-        </div>
-        <!-- Web -->
-        <div class="skill-card glass-card" data-cat="web">
-          <div class="skill-icon">🌐</div>
-          <div class="skill-name">HTML</div>
-          <div class="skill-bar-wrap"><div class="skill-bar" data-w="90"></div></div>
-          <div class="skill-cat-tag">Web Dev</div>
-        </div>
-        <div class="skill-card glass-card" data-cat="web">
-          <div class="skill-icon">🎨</div>
-          <div class="skill-name">CSS</div>
-          <div class="skill-bar-wrap"><div class="skill-bar" data-w="85"></div></div>
-          <div class="skill-cat-tag">Web Dev</div>
-        </div>
-        <!-- Tools -->
-        <div class="skill-card glass-card" data-cat="tools">
-          <div class="skill-icon">🔀</div>
-          <div class="skill-name">Git</div>
-          <div class="skill-bar-wrap"><div class="skill-bar" data-w="85"></div></div>
-          <div class="skill-cat-tag">Tools</div>
-        </div>
-        <div class="skill-card glass-card" data-cat="tools">
-          <div class="skill-icon">🐙</div>
-          <div class="skill-name">GitHub</div>
-          <div class="skill-bar-wrap"><div class="skill-bar" data-w="87"></div></div>
-          <div class="skill-cat-tag">Tools</div>
-        </div>
-        <div class="skill-card glass-card" data-cat="tools">
-          <div class="skill-icon">💻</div>
-          <div class="skill-name">VS Code</div>
-          <div class="skill-bar-wrap"><div class="skill-bar" data-w="95"></div></div>
-          <div class="skill-cat-tag">Tools</div>
-        </div>
-        <div class="skill-card glass-card" data-cat="tools">
-          <div class="skill-icon">🔬</div>
-          <div class="skill-name">Google Colab</div>
-          <div class="skill-bar-wrap"><div class="skill-bar" data-w="88"></div></div>
-          <div class="skill-cat-tag">Tools</div>
-        </div>
-      </div>
-    </div>
-  </section>
+      <div class="hero-grid"></div>
 
-  <!-- PROJECTS -->
-  <section id="projects" class="section">
-    <div class="container">
-      <div class="section-eyebrow">Featured Work</div>
-      <h2 class="section-title centered">AI Projects</h2>
-      <div class="projects-grid">
+      <div class="container hero-content">
 
-        <div class="project-card glass-card reveal-up">
-          <div class="project-glow glow-blue"></div>
-          <div class="project-header">
-            <div class="project-icon">🏥</div>
-            <div class="project-number">01</div>
-          </div>
-          <h3 class="project-title">HealthAI</h3>
-          <p class="project-desc">An AI-powered healthcare assistant leveraging IBM Granite models to bridge the gap between patients and intelligent medical guidance. Combines NLP, predictive modeling, and health analytics in one unified platform.</p>
-          <div class="project-features">
-            <span class="feature-tag">Patient Chat</span>
-            <span class="feature-tag">Disease Prediction</span>
-            <span class="feature-tag">Treatment Recommendations</span>
-            <span class="feature-tag">Health Analytics</span>
-          </div>
-          <div class="project-tech">
-            <span class="tech-pill">Python</span>
-            <span class="tech-pill">IBM Granite</span>
-            <span class="tech-pill">ML</span>
-            <span class="tech-pill">NLP</span>
-          </div>
-          <div class="project-actions">
-            <a href="https://github.com/aishu104" target="_blank" class="btn btn-ghost">GitHub →</a>
-            <a href="#" class="btn btn-glass btn-sm">Demo (Soon)</a>
-          </div>
+        <div class="hero-badge reveal-up">
+          <span class="status-dot"></span>
+          Open to Internships & Fresher Opportunities
         </div>
 
-        <div class="project-card glass-card reveal-up delay-1">
-          <div class="project-glow glow-purple"></div>
-          <div class="project-header">
-            <div class="project-icon">🎯</div>
-            <div class="project-number">02</div>
-          </div>
-          <h3 class="project-title">DecidePlay AI</h3>
-          <p class="project-desc">An intelligent recommendation engine that delivers highly personalized decision support across domains. Harnesses machine learning to understand user context and surface relevant, ranked suggestions in real time.</p>
-          <div class="project-features">
-            <span class="feature-tag">Smart Recommendations</span>
-            <span class="feature-tag">Personalization Engine</span>
-            <span class="feature-tag">Decision Support</span>
-            <span class="feature-tag">Real-time Ranking</span>
-          </div>
-          <div class="project-tech">
-            <span class="tech-pill">Python</span>
-            <span class="tech-pill">React</span>
-            <span class="tech-pill">Recommendation ML</span>
-            <span class="tech-pill">Node.js</span>
-          </div>
-          <div class="project-actions">
-            <a href="https://github.com/aishu104" target="_blank" class="btn btn-ghost">GitHub →</a>
-            <a href="#" class="btn btn-glass btn-sm">Demo (Soon)</a>
-          </div>
+        <p class="hero-intro reveal-up">
+          Hello, I'm
+        </p>
+
+        <h1 class="hero-name reveal-up">
+          Akella Lakshmi
+          <span>Aiswarya</span>
+        </h1>
+
+        <div class="hero-role reveal-up">
+          <span class="hash">#</span>
+          <span id="typed"></span>
+          <span class="cursor">|</span>
         </div>
 
-      </div>
-    </div>
-  </section>
+        <p class="hero-description reveal-up">
+          B.Tech CSE (AI & ML) student passionate about building
+          practical solutions using Artificial Intelligence,
+          Generative AI, Machine Learning and Salesforce Agentforce.
+        </p>
 
-  <!-- CERTIFICATIONS -->
-  <section id="certifications" class="section section-alt">
-    <div class="container">
-      <div class="section-eyebrow">Credentials</div>
-      <h2 class="section-title centered">Certifications</h2>
-      <div class="certs-grid">
+        <div class="hero-actions reveal-up">
 
-        <div class="cert-card glass-card reveal-up">
-          <div class="cert-badge">🏆</div>
-          <div class="cert-body">
-            <div class="cert-issuer">Salesforce</div>
-            <div class="cert-title">Global Certification</div>
-          </div>
-          <div class="cert-glow"></div>
-        </div>
-
-        <div class="cert-card glass-card reveal-up delay-1">
-          <div class="cert-badge">🤖</div>
-          <div class="cert-body">
-            <div class="cert-issuer">SMART INTERNZ 2025</div>
-            <div class="cert-title">Generative AI with IBM Cloud</div>
-          </div>
-          <div class="cert-glow"></div>
-        </div>
-
-        <div class="cert-card glass-card reveal-up delay-2">
-          <div class="cert-badge">🥇</div>
-          <div class="cert-body">
-            <div class="cert-issuer">NPTEL</div>
-            <div class="cert-title">Gold Medal — Programming in Java</div>
-          </div>
-          <div class="cert-glow"></div>
-        </div>
-
-        <div class="cert-card glass-card reveal-up delay-3">
-          <div class="cert-badge">🥈</div>
-          <div class="cert-body">
-            <div class="cert-issuer">NPTEL</div>
-            <div class="cert-title">Silver Medal — Joy of Computing (Python)</div>
-          </div>
-          <div class="cert-glow"></div>
-        </div>
-
-        <div class="cert-card glass-card reveal-up">
-          <div class="cert-badge">📗</div>
-          <div class="cert-body">
-            <div class="cert-issuer">Infosys Springboard</div>
-            <div class="cert-title">C Programming</div>
-          </div>
-          <div class="cert-glow"></div>
-        </div>
-
-        <div class="cert-card glass-card reveal-up delay-1">
-          <div class="cert-badge">⭐</div>
-          <div class="cert-body">
-            <div class="cert-issuer">HackerRank</div>
-            <div class="cert-title">Python Basic & Golden Badge</div>
-          </div>
-          <div class="cert-glow"></div>
-        </div>
-
-        <div class="cert-card glass-card reveal-up delay-2">
-          <div class="cert-badge">🎓</div>
-          <div class="cert-body">
-            <div class="cert-issuer">Red Hat</div>
-            <div class="cert-title">Python Programming</div>
-          </div>
-          <div class="cert-glow"></div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ACHIEVEMENTS -->
-  <section id="achievements" class="section">
-    <div class="container">
-      <div class="section-eyebrow">By the Numbers</div>
-      <h2 class="section-title centered">Achievements</h2>
-      <div class="stats-grid">
-        <div class="big-stat reveal-up">
-          <div class="big-num" data-target="9.18" data-decimal="2">0</div>
-          <div class="big-label">CGPA</div>
-          <div class="big-sub">Academic Excellence</div>
-        </div>
-        <div class="big-stat reveal-up delay-1">
-          <div class="big-num" data-target="2" data-suffix="+">0</div>
-          <div class="big-label">Projects</div>
-          <div class="big-sub">AI & Full-Stack</div>
-        </div>
-        <div class="big-stat reveal-up delay-2">
-          <div class="big-num" data-target="7" data-suffix="+">0</div>
-          <div class="big-label">Certifications</div>
-          <div class="big-sub">Industry & Academic</div>
-        </div>
-        <div class="big-stat reveal-up delay-3">
-          <div class="big-num" data-target="15" data-suffix="+">0</div>
-          <div class="big-label">Technologies</div>
-          <div class="big-sub">Learned & Applied</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- JOURNEY -->
-  <section id="journey" class="section section-alt">
-    <div class="container">
-      <div class="section-eyebrow">Career Timeline</div>
-      <h2 class="section-title centered">My Journey</h2>
-      <div class="timeline">
-
-        <div class="timeline-item reveal-left">
-          <div class="tl-dot"></div>
-          <div class="tl-year">2023</div>
-          <div class="tl-card glass-card">
-            <div class="tl-title">B.Tech Begins</div>
-            <div class="tl-desc">Started Computer Science Engineering with specialization in AI & ML. Laid the foundation in mathematics, programming, and algorithmic thinking.</div>
-          </div>
-        </div>
-
-        <div class="timeline-item reveal-right">
-          <div class="tl-dot"></div>
-          <div class="tl-year">2024</div>
-          <div class="tl-card glass-card">
-            <div class="tl-title">Programming Fundamentals</div>
-            <div class="tl-desc">Strengthened core programming in Python, Java, and C. Earned NPTEL Gold in Java and Silver in Python — validating skills through national-level exams.</div>
-          </div>
-        </div>
-
-        <div class="timeline-item reveal-left">
-          <div class="tl-dot"></div>
-          <div class="tl-year">2025</div>
-          <div class="tl-card glass-card">
-            <div class="tl-title">AI & ML Domain Entry</div>
-            <div class="tl-desc">Entered the AI & ML domain with formal coursework and certifications including Generative AI with IBM Cloud via SMART INTERNZ. Started building ML intuition.</div>
-          </div>
-        </div>
-
-        <div class="timeline-item reveal-right">
-          <div class="tl-dot"></div>
-          <div class="tl-year">2025</div>
-          <div class="tl-card glass-card">
-            <div class="tl-title">First AI Projects</div>
-            <div class="tl-desc">Transitioned from learning to building. Designed project architectures that combine multiple AI techniques. Salesforce Global Certification earned.</div>
-          </div>
-        </div>
-
-        <div class="timeline-item reveal-left">
-          <div class="tl-dot tl-dot-active"></div>
-          <div class="tl-year neon-text">2026</div>
-          <div class="tl-card glass-card tl-active">
-            <div class="tl-title">DecidePlay AI Launched</div>
-            <div class="tl-desc">Built a full AI recommendation platform with personalized decision support. Applied recommendation system algorithms, React frontend, and Node.js backend.</div>
-          </div>
-        </div>
-
-        <div class="timeline-item reveal-right">
-          <div class="tl-dot tl-dot-active"></div>
-          <div class="tl-year neon-text">2026</div>
-          <div class="tl-card glass-card tl-active">
-            <div class="tl-title">HealthAI Developed</div>
-            <div class="tl-desc">Deployed an IBM Granite-powered healthcare assistant with disease prediction and treatment recommendation capabilities. Integrated health analytics dashboard.</div>
-          </div>
-        </div>
-
-        <div class="timeline-item reveal-left">
-          <div class="tl-dot tl-dot-active"></div>
-          <div class="tl-year neon-text">2026</div>
-          <div class="tl-card glass-card tl-active">
-            <div class="tl-title">Full Stack Web Dev Intern</div>
-            <div class="tl-desc">Currently applying both AI and web engineering skills in a professional internship environment, bridging theory and industry practice.</div>
-          </div>
-        </div>
-
-        <div class="timeline-item reveal-right timeline-goal">
-          <div class="tl-dot tl-dot-future"></div>
-          <div class="tl-year">Future</div>
-          <div class="tl-card glass-card tl-goal">
-            <div class="tl-goal-badge">🎯 Goal</div>
-            <div class="tl-title">AI / ML Engineer</div>
-            <div class="tl-desc">Building production AI systems that solve meaningful problems at scale — at a company where engineering rigor and research ambition intersect.</div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="section">
-    <div class="container">
-      <div class="section-eyebrow">Get In Touch</div>
-      <h2 class="section-title centered">Let's Connect</h2>
-      <p class="contact-intro">Whether you're looking for an AI engineer, have a project idea, or just want to talk tech — my inbox is open.</p>
-
-      <div class="contact-grid">
-        <div class="contact-links reveal-left">
-          <a href="mailto:lakshmiaiswaryaakella@gmail.com" class="contact-link-card glass-card">
-            <div class="cl-icon">✉️</div>
-            <div class="cl-body">
-              <div class="cl-label">Email</div>
-              <div class="cl-value">lakshmiaiswaryaakella@gmail.com</div>
-            </div>
-            <div class="cl-arrow">→</div>
+          <a href="#projects" class="btn btn-primary">
+            <span>Explore Projects</span>
+            <span>↗</span>
           </a>
-          <a href="https://github.com/aishu104" target="_blank" class="contact-link-card glass-card">
-            <div class="cl-icon">🐙</div>
-            <div class="cl-body">
-              <div class="cl-label">GitHub</div>
-              <div class="cl-value">github.com/aishu104</div>
-            </div>
-            <div class="cl-arrow">→</div>
+
+          <a href="resume.pdf" id="resume-btn" class="btn btn-secondary" download>
+            <span>Download Resume</span>
+            <span>↓</span>
           </a>
-          <a href="https://www.linkedin.com/in/lakshmi-aiswarya-akella-95053532a/" target="_blank" class="contact-link-card glass-card">
-            <div class="cl-icon">💼</div>
-            <div class="cl-body">
-              <div class="cl-label">LinkedIn</div>
-              <div class="cl-value">Lakshmi Aiswarya Akella</div>
-            </div>
-            <div class="cl-arrow">→</div>
+
+          <a href="#contact" class="btn btn-ghost">
+            Contact Me
           </a>
+
         </div>
 
-        <form class="contact-form glass-card reveal-right" id="contact-form">
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" placeholder="Your name" required />
-          </div>
-          <div class="form-group">
-            <label for="email-input">Email</label>
-            <input type="email" id="email-input" placeholder="your@email.com" required />
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" rows="4" placeholder="What would you like to discuss?" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary w-full">Send Message</button>
-          <div class="form-success" id="form-success">✓ Message sent! I'll get back to you soon.</div>
-        </form>
-      </div>
-    </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer id="footer">
-    <div class="footer-inner">
-      <div class="footer-brand">ALA<span class="dot">.</span></div>
-      <p class="footer-tagline">"Transforming ideas into intelligent solutions."</p>
+        <!-- HERO STATS -->
+        <div class="hero-stats reveal-up">
+
+          <div class="hero-stat">
+            <strong class="big-num" data-target="9.13" data-decimal="2">
+              9.13
+            </strong>
+            <span>CGPA</span>
+          </div>
+
+          <div class="hero-stat">
+            <strong class="big-num" data-target="3" data-suffix="+">
+              3+
+            </strong>
+            <span>AI Projects</span>
+          </div>
+
+          <div class="hero-stat">
+            <strong class="big-num" data-target="8" data-suffix="+">
+              8+
+            </strong>
+            <span>Certifications</span>
+          </div>
+
+          <div class="hero-stat">
+            <strong class="big-num" data-target="2" data-suffix="+">
+              2+
+            </strong>
+            <span>Internships</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="scroll-indicator">
+        <span>Scroll to explore</span>
+        <div class="scroll-line"></div>
+      </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+    <section id="about" class="section">
+
+      <div class="container">
+
+        <div class="section-header reveal-up">
+          <span class="section-number">01</span>
+
+          <div>
+            <p class="section-label">GET TO KNOW ME</p>
+            <h2>About Me</h2>
+          </div>
+        </div>
+
+
+        <div class="about-grid">
+
+          <!-- PROFILE -->
+          <div class="about-profile reveal-left">
+
+            <div class="avatar-wrapper">
+
+              <div class="avatar-ring ring-one"></div>
+              <div class="avatar-ring ring-two"></div>
+
+              <div class="avatar">
+                <span>ALA</span>
+              </div>
+
+            </div>
+
+            <div class="profile-code">
+              <span>student</span> =
+              <span class="code-string">"AI & ML Engineer"</span>
+            </div>
+
+          </div>
+
+
+          <!-- ABOUT CONTENT -->
+          <div class="about-content reveal-right">
+
+            <p class="lead">
+              I'm a final-year <strong>B.Tech Computer Science &
+              Engineering (AI & ML)</strong> student with a strong
+              interest in Artificial Intelligence, Generative AI,
+              Machine Learning and Salesforce Agentforce.
+            </p>
+
+            <p>
+              I enjoy turning ideas into practical applications and
+              learning new technologies by building projects.
+              My experience includes working with Python, AI/ML
+              concepts, Generative AI, IBM Granite, Salesforce and
+              Agentforce.
+            </p>
+
+            <p>
+              I'm currently focused on strengthening my programming,
+              problem-solving and AI engineering skills while
+              preparing for internships and fresher opportunities.
+            </p>
+
+
+            <!-- EDUCATION CARD -->
+            <div class="education-card">
+
+              <div class="education-icon">
+                🎓
+              </div>
+
+              <div>
+                <span class="card-label">EDUCATION</span>
+
+                <h3>
+                  B.Tech — Computer Science & Engineering
+                </h3>
+
+                <p>
+                  Specialization: Artificial Intelligence & Machine Learning
+                </p>
+
+                <div class="education-meta">
+                  <span>Ideal Institute of Technology</span>
+                  <span>2023 — 2027</span>
+                  <strong>CGPA 9.13</strong>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- PERSONAL PILLARS -->
+        <div class="pillars">
+
+          <div class="pillar reveal-up">
+            <span class="pillar-number">01</span>
+            <h3>Quick Learner</h3>
+            <p>
+              Comfortable learning new technologies and adapting
+              to new environments.
+            </p>
+          </div>
+
+          <div class="pillar reveal-up">
+            <span class="pillar-number">02</span>
+            <h3>Problem Solver</h3>
+            <p>
+              Interested in breaking problems into smaller,
+              practical and manageable solutions.
+            </p>
+          </div>
+
+          <div class="pillar reveal-up">
+            <span class="pillar-number">03</span>
+            <h3>AI Enthusiast</h3>
+            <p>
+              Exploring Generative AI, Machine Learning,
+              LLMs and intelligent applications.
+            </p>
+          </div>
+
+          <div class="pillar reveal-up">
+            <span class="pillar-number">04</span>
+            <h3>Team Player</h3>
+            <p>
+              Enjoy collaborating, communicating ideas and
+              contributing to team projects.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================= SKILLS ================= -->
+    <section id="skills" class="section section-alt">
+
+      <div class="container">
+
+        <div class="section-header reveal-up">
+          <span class="section-number">02</span>
+
+          <div>
+            <p class="section-label">WHAT I WORK WITH</p>
+            <h2>Skills & Technologies</h2>
+          </div>
+        </div>
+
+
+        <!-- FILTERS -->
+        <div class="skill-filters reveal-up">
+
+          <button class="filter-btn active" data-filter="all">
+            All
+          </button>
+
+          <button class="filter-btn" data-filter="programming">
+            Programming
+          </button>
+
+          <button class="filter-btn" data-filter="ai">
+            AI & ML
+          </button>
+
+          <button class="filter-btn" data-filter="salesforce">
+            Salesforce
+          </button>
+
+          <button class="filter-btn" data-filter="web">
+            Web
+          </button>
+
+          <button class="filter-btn" data-filter="tools">
+            Tools
+          </button>
+
+        </div>
+
+
+        <div id="skills-grid" class="skills-grid">
+
+
+          <!-- PYTHON -->
+          <div class="skill-card reveal-up" data-cat="programming">
+
+            <div class="skill-top">
+              <span class="skill-icon python-icon">Py</span>
+              <span class="skill-level">Working Knowledge</span>
+            </div>
+
+            <h3>Python</h3>
+
+            <p>
+              Programming, automation and AI/ML development.
+            </p>
+
+            <div class="skill-progress">
+              <div class="skill-bar" data-w="70"></div>
+            </div>
+
+          </div>
+
+
+          <!-- JAVA -->
+          <div class="skill-card reveal-up" data-cat="programming">
+
+            <div class="skill-top">
+              <span class="skill-icon">☕</span>
+              <span class="skill-level">Working Knowledge</span>
+            </div>
+
+            <h3>Java</h3>
+
+            <p>
+              Core Java concepts and object-oriented programming.
+            </p>
+
+            <div class="skill-progress">
+              <div class="skill-bar" data-w="65"></div>
+            </div>
+
+          </div>
+
+
+          <!-- C -->
+          <div class="skill-card reveal-up" data-cat="programming">
+
+            <div class="skill-top">
+              <span class="skill-icon">C</span>
+              <span class="skill-level">Working Knowledge</span>
+            </div>
+
+            <h3>C Programming</h3>
+
+            <p>
+              Fundamentals, programming logic and problem solving.
+            </p>
+
+            <div class="skill-progress">
+              <div class="skill-bar" data-w="65"></div>
+            </div>
+
+          </div>
+
+
+          <!-- SQL -->
+          <div class="skill-card reveal-up" data-cat="programming">
+
+            <div class="skill-top">
+              <span class="skill-icon">SQL</span>
+              <span class="skill-level">Working Knowledge</span>
+            </div>
+
+            <h3>SQL</h3>
+
+            <p>
+              Queries, filtering, joins and database fundamentals.
+            </p>
+
+            <div class="skill-progress">
+              <div class="skill-bar" data-w="65"></div>
+            </div>
+
+          </div>
+
+
+          <!-- AI/ML -->
+          <div class="skill-card reveal-up" data-cat="ai">
+
+            <div class="skill-top">
+              <span class="skill-icon">AI</span>
+              <span class="skill-level">Learning</span>
+            </div>
+
+            <h3>Artificial Intelligence</h3>
+
+            <p>
+              AI concepts and practical intelligent applications.
+            </p>
+
+            <div class="skill-progress">
+              <div class="skill-bar" data-w="65"></div>
+            </div>
+
+          </div>
+
+
+          <!-- GEN AI -->
+          <div class="skill-card reveal-up" data-cat="ai">
+
+            <div class="skill-top">
+              <span class="skill-icon">✦</span>
+              <span class="skill-level">Learning</span>
+            </div>
+
+            <h3>Generative AI</h3>
+
+            <p>
+              LLM concepts, prompting and AI application development.
+            </p>
+
+            <div class="skill-progress">
+              <div class="skill-bar" data-w="65"></div>
+            </div>
+
+          </div>
+
+
+          <!-- LLM -->
+          <div class="skill-card reveal-up" data-cat="ai">
+
+            <div class="skill-top">
+              <span class="skill-icon">LLM</span>
+              <span class="skill-level">Learning</span>
+            </div>
+
+            <h3>LLMs</h3>
+
+            <p>
+              Exploring large language models and AI-powered workflows.
+            </p>
+
+            <div class="skill-progress">
+              <div class="skill-bar" data-w="55"></div>
+            </div>
+
+          </div>
+
+
+          <!-- RAG -->
+          <div class="skill-card reveal-up" data-cat="ai">
+
+            <div class="skill-top">
+              <span class="skill-icon">RAG</span>
+              <span class="skill-level">Learning</span>
+            </div>
+
+            <h3>RAG</h3>
+
+            <p>
+              Retrieval-augmented generation concepts and applications.
+            </p>
+
+            <div class="skill-progress">
+              <div class="skill-bar" data-w="55"></div>
+            </div>
+
+          </div>
+
+
+          <!-- SALESFORCE -->
+          <div class="skill-card reveal-up" data-cat="salesforce">
+
+            <div class="skill-top">
+              <span class="skill-icon">SF</span>
+              <span class="skill-level">Certified</span>
+            </div>
+
+            <h3>Salesforce</h3>
+
+            <p>
+              Salesforce platform fundamentals and administration concepts.
+            </p>
+
+            <div class="skill-progress">
+              <div class="skill-bar" data-w="70"></div>
+            </div>
+
+          </div>
+
+
+          <!-- AGENTFORCE -->
+          <div class="skill-card reveal-up" data-cat="salesforce">
+
+            <div class="skill-top">
+              <span class="skill-icon">AF</span>
+              <span class="skill-level">Specialized</span>
+            </div>
+
+            <h3>AI Agentforce</h3>
+
+            <p>
+              AI Agentforce concepts and AI-powered Salesforce workflows.
+            </p>
+
+            <div class="skill-progress">
+              <div class="skill-bar" data-w="65"></div>
+            </div>
+
+          </div>
+
+
+          <!-- HTML -->
+          <div class="skill-card reveal-up" data-cat="web">
+
+            <div class="skill-top">
+              <span class="skill-icon">&lt;/&gt;</span>
+              <span class="skill-level">Working Knowledge</span>
+            </div>
+
+            <h3>HTML</h3>
+
+            <p>
+              Semantic structure and responsive web page development.
+            </p>
+
+            <div class="skill-progress">
+              <div class="skill-bar" data-w="70"></div>
+            </div>
+
+          </div>
+
+
+          <!-- CSS -->
+          <div class="skill-card reveal-up" data-cat="web">
+
+            <div class="skill-top">
+              <span class="skill-icon">CSS</span>
+              <span class="skill-level">Working Knowledge</span>
+            </div>
+
+            <h3>CSS</h3>
+
+            <p>
+              Responsive layouts, animations and modern UI styling.
+            </p>
+
+            <div class="skill-progress">
+              <div class="skill-bar" data-w="65"></div>
+            </div>
+
+          </div>
+
+
+          <!-- JAVASCRIPT -->
+          <div class="skill-card reveal-up" data-cat="web">
+
+            <div class="skill-top">
+              <span class="skill-icon">JS</span>
+              <span class="skill-level">Basic</span>
+            </div>
+
+            <h3>JavaScript</h3>
+
+            <p>
+              DOM manipulation, events and interactive web features.
+            </p>
+
+            <div class="skill-progress">
+              <div class="skill-bar" data-w="55"></div>
+            </div>
+
+          </div>
+
+
+          <!-- GIT -->
+          <div class="skill-card reveal-up" data-cat="tools">
+
+            <div class="skill-top">
+              <span class="skill-icon">Git</span>
+              <span class="skill-level">Working Knowledge</span>
+            </div>
+
+            <h3>Git & GitHub</h3>
+
+            <p>
+              Version control, repositories and project collaboration.
+            </p>
+
+            <div class="skill-progress">
+              <div class="skill-bar" data-w="70"></div>
+            </div>
+
+          </div>
+
+
+          <!-- COLAB -->
+          <div class="skill-card reveal-up" data-cat="tools">
+
+            <div class="skill-top">
+              <span class="skill-icon">CO</span>
+              <span class="skill-level">Working Knowledge</span>
+            </div>
+
+            <h3>Google Colab</h3>
+
+            <p>
+              Python notebooks and experimentation for AI projects.
+            </p>
+
+            <div class="skill-progress">
+              <div class="skill-bar" data-w="75"></div>
+            </div>
+
+          </div>
+
+
+          <!-- STREAMLIT -->
+          <div class="skill-card reveal-up" data-cat="tools">
+
+            <div class="skill-top">
+              <span class="skill-icon">ST</span>
+              <span class="skill-level">Working Knowledge</span>
+            </div>
+
+            <h3>Streamlit</h3>
+
+            <p>
+              Building interactive interfaces for AI/ML applications.
+            </p>
+
+            <div class="skill-progress">
+              <div class="skill-bar" data-w="60"></div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================= PROJECTS ================= -->
+    <section id="projects" class="section">
+
+      <div class="container">
+
+        <div class="section-header reveal-up">
+
+          <span class="section-number">03</span>
+
+          <div>
+            <p class="section-label">WHAT I'VE BUILT</p>
+            <h2>Featured Projects</h2>
+          </div>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+
+          <!-- PROJECT 1 -->
+          <article class="project-card project-featured reveal-up">
+
+            <div class="project-glow"></div>
+
+            <div class="project-number">
+              01
+            </div>
+
+            <div class="project-content">
+
+              <div class="project-top">
+
+                <span class="project-category">
+                  SALESFORCE · AI AGENTFORCE
+                </span>
+
+                <span class="project-status">
+                  AI PROJECT
+                </span>
+
+              </div>
+
+              <h3>
+                AI-Powered Job Recruitment System
+              </h3>
+
+              <p>
+                An AI-powered recruitment solution built around
+                Salesforce concepts and Agentforce. The project
+                supports candidate evaluation and recruitment
+                workflows using an AI recruitment assistant.
+              </p>
+
+
+              <div class="project-features">
+
+                <span>✓ Candidate Evaluation</span>
+                <span>✓ AI Recruitment Assistant</span>
+                <span>✓ Recruitment Workflow</span>
+                <span>✓ Agentforce</span>
+
+              </div>
+
+
+              <div class="tech-stack">
+
+                <span>Salesforce</span>
+                <span>Agentforce</span>
+                <span>AI</span>
+                <span>CRM</span>
+
+              </div>
+
+
+              <div class="project-actions">
+
+                <a
+                  href="https://github.com/aishu104/AI-Powered-Job-Recruitment-System"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-btn primary"
+                >
+                  View on GitHub ↗
+                </a>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- PROJECT 2 -->
+          <article class="project-card reveal-up">
+
+            <div class="project-number">
+              02
+            </div>
+
+            <div class="project-content">
+
+              <div class="project-top">
+
+                <span class="project-category">
+                  GENERATIVE AI · HEALTHCARE
+                </span>
+
+                <span class="project-status">
+                  COMPLETED
+                </span>
+
+              </div>
+
+              <h3>
+                HealthAI
+              </h3>
+
+              <p>
+                A Generative AI healthcare application using
+                IBM Granite to provide patient interaction,
+                disease prediction, treatment planning and
+                health analytics features.
+              </p>
+
+
+              <div class="project-features">
+
+                <span>✓ Patient Chat</span>
+                <span>✓ Disease Prediction</span>
+                <span>✓ Treatment Plans</span>
+                <span>✓ Health Analytics</span>
+
+              </div>
+
+
+              <div class="tech-stack">
+
+                <span>Python</span>
+                <span>IBM Granite</span>
+                <span>GenAI</span>
+                <span>Streamlit</span>
+
+              </div>
+
+
+              <div class="project-actions">
+
+                <a
+                  href="https://github.com/aishu104"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-btn primary"
+                >
+                  GitHub Profile ↗
+                </a>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- PROJECT 3 -->
+          <article class="project-card reveal-up">
+
+            <div class="project-number">
+              03
+            </div>
+
+            <div class="project-content">
+
+              <div class="project-top">
+
+                <span class="project-category">
+                  AI · DECISION SUPPORT
+                </span>
+
+                <span class="project-status">
+                  LIVE
+                </span>
+
+              </div>
+
+              <h3>
+                DecidePlay AI
+              </h3>
+
+              <p>
+                An AI-powered application that helps users deal
+                with everyday decisions through different
+                categories such as Food, Study, Lifestyle and Fun,
+                along with interactive decision-making games.
+              </p>
+
+
+              <div class="project-features">
+
+                <span>✓ Food Decisions</span>
+                <span>✓ Study Decisions</span>
+                <span>✓ Lifestyle</span>
+                <span>✓ Interactive Games</span>
+
+              </div>
+
+
+              <div class="tech-stack">
+
+                <span>AI</span>
+                <span>Python</span>
+                <span>Web App</span>
+                <span>Decision Support</span>
+
+              </div>
+
+
+              <div class="project-actions">
+
+                <a
+                  href="https://v0-decideplay-ai.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-btn primary"
+                >
+                  Live Demo ↗
+                </a>
+
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================= CERTIFICATIONS ================= -->
+    <section id="certifications" class="section section-alt">
+
+      <div class="container">
+
+        <div class="section-header reveal-up">
+
+          <span class="section-number">04</span>
+
+          <div>
+            <p class="section-label">LEARNING & VALIDATION</p>
+            <h2>Certifications</h2>
+          </div>
+
+        </div>
+
+
+        <div class="cert-grid">
+
+
+          <div class="cert-card reveal-up">
+            <span class="cert-number">01</span>
+
+            <div class="cert-icon">SF</div>
+
+            <div>
+              <span class="cert-org">Salesforce</span>
+              <h3>Salesforce AI Agentforce Specialist</h3>
+              <p>AI-powered Salesforce and Agentforce specialization.</p>
+            </div>
+          </div>
+
+
+          <div class="cert-card reveal-up">
+            <span class="cert-number">02</span>
+
+            <div class="cert-icon">IBM</div>
+
+            <div>
+              <span class="cert-org">SMART INTERNZ</span>
+              <h3>Generative AI with IBM Cloud</h3>
+              <p>Generative AI learning and hands-on project experience.</p>
+            </div>
+          </div>
+
+
+          <div class="cert-card reveal-up">
+            <span class="cert-number">03</span>
+
+            <div class="cert-icon">NPTEL</div>
+
+            <div>
+              <span class="cert-org">NPTEL</span>
+              <h3>Programming in Java</h3>
+              <p>Gold Medal</p>
+            </div>
+          </div>
+
+
+          <div class="cert-card reveal-up">
+            <span class="cert-number">04</span>
+
+            <div class="cert-icon">NPTEL</div>
+
+            <div>
+              <span class="cert-org">NPTEL</span>
+              <h3>Joy of Computing Using Python</h3>
+              <p>Silver Medal</p>
+            </div>
+          </div>
+
+
+          <div class="cert-card reveal-up">
+            <span class="cert-number">05</span>
+
+            <div class="cert-icon">HR</div>
+
+            <div>
+              <span class="cert-org">HACKERRANK</span>
+              <h3>Python Basic</h3>
+              <p>Python skill certification and badge.</p>
+            </div>
+          </div>
+
+
+          <div class="cert-card reveal-up">
+            <span class="cert-number">06</span>
+
+            <div class="cert-icon">RED</div>
+
+            <div>
+              <span class="cert-org">RED HAT</span>
+              <h3>Python Programming</h3>
+              <p>Python programming fundamentals.</p>
+            </div>
+          </div>
+
+
+          <div class="cert-card reveal-up">
+            <span class="cert-number">07</span>
+
+            <div class="cert-icon">MS</div>
+
+            <div>
+              <span class="cert-org">MICROSOFT</span>
+              <h3>Get Started with Python</h3>
+              <p>Python programming fundamentals.</p>
+            </div>
+          </div>
+
+
+          <div class="cert-card reveal-up">
+            <span class="cert-number">08</span>
+
+            <div class="cert-icon">AI</div>
+
+            <div>
+              <span class="cert-org">EY & MICROSOFT</span>
+              <h3>AI Skills Passport</h3>
+              <p>Artificial Intelligence learning pathway.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================= ACHIEVEMENTS ================= -->
+    <section id="achievements" class="section">
+
+      <div class="container">
+
+        <div class="section-header reveal-up">
+
+          <span class="section-number">05</span>
+
+          <div>
+            <p class="section-label">MILESTONES</p>
+            <h2>Achievements</h2>
+          </div>
+
+        </div>
+
+
+        <div class="achievement-grid">
+
+
+          <div class="achievement-card reveal-up">
+            <span class="achievement-icon">🎓</span>
+            <strong>9.13</strong>
+            <h3>Academic CGPA</h3>
+            <p>B.Tech CSE (AI & ML)</p>
+          </div>
+
+
+          <div class="achievement-card reveal-up">
+            <span class="achievement-icon">🤖</span>
+            <strong>3+</strong>
+            <h3>AI Projects</h3>
+            <p>Practical AI & GenAI applications</p>
+          </div>
+
+
+          <div class="achievement-card reveal-up">
+            <span class="achievement-icon">🏆</span>
+            <strong>8+</strong>
+            <h3>Certifications</h3>
+            <p>AI, Salesforce, Python & Java</p>
+          </div>
+
+
+          <div class="achievement-card reveal-up">
+            <span class="achievement-icon">☁</span>
+            <strong>2+</strong>
+            <h3>Internship Experiences</h3>
+            <p>AI, GenAI & Salesforce domains</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================= JOURNEY ================= -->
+    <section id="journey" class="section section-alt">
+
+      <div class="container">
+
+        <div class="section-header reveal-up">
+
+          <span class="section-number">06</span>
+
+          <div>
+            <p class="section-label">MY DEVELOPMENT</p>
+            <h2>Journey</h2>
+          </div>
+
+        </div>
+
+
+        <div class="timeline">
+
+
+          <div class="timeline-item reveal-right">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-year">
+              2023
+            </div>
+
+            <div class="timeline-content">
+
+              <span>B.Tech Begins</span>
+
+              <h3>
+                Computer Science & Engineering
+              </h3>
+
+              <p>
+                Started my B.Tech journey with a focus on
+                computer science fundamentals.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="timeline-item reveal-left">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-year">
+              2024
+            </div>
+
+            <div class="timeline-content">
+
+              <span>Programming Foundation</span>
+
+              <h3>
+                Python & Java
+              </h3>
+
+              <p>
+                Strengthened programming fundamentals and
+                completed NPTEL courses in Java and Python.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="timeline-item reveal-right">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-year">
+              2025
+            </div>
+
+            <div class="timeline-content">
+
+              <span>AI & GenAI</span>
+
+              <h3>
+                Entered the AI Domain
+              </h3>
+
+              <p>
+                Started exploring Generative AI, IBM Granite
+                and practical AI application development.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="timeline-item reveal-left">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-year">
+              2026
+            </div>
+
+            <div class="timeline-content">
+
+              <span>Salesforce + AI</span>
+
+              <h3>
+                Agentforce & AI Projects
+              </h3>
+
+              <p>
+                Expanded into Salesforce Agentforce while
+                developing AI-powered projects including
+                recruitment and decision-support applications.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="timeline-item reveal-right">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-year">
+              2027
+            </div>
+
+            <div class="timeline-content">
+
+              <span>Next Goal</span>
+
+              <h3>
+                AI/ML Engineer
+              </h3>
+
+              <p>
+                Looking forward to starting my professional
+                career in AI, Machine Learning, Generative AI
+                or Salesforce AI technologies.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+    <section id="contact" class="section contact-section">
+
+      <div class="container">
+
+        <div class="section-header reveal-up">
+
+          <span class="section-number">07</span>
+
+          <div>
+            <p class="section-label">LET'S CONNECT</p>
+            <h2>Get In Touch</h2>
+          </div>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+
+          <!-- CONTACT INFO -->
+          <div class="contact-info reveal-left">
+
+            <h3>
+              Let's build something
+              <span>intelligent.</span>
+            </h3>
+
+            <p>
+              I'm open to internships, fresher opportunities,
+              AI/ML roles, Salesforce opportunities and
+              collaborative projects.
+            </p>
+
+
+            <div class="contact-links">
+
+              <a
+                href="mailto:lakshmiaiswaryaakella@gmail.com"
+                class="contact-link"
+              >
+
+                <span class="contact-icon">✉</span>
+
+                <div>
+                  <small>EMAIL</small>
+                  <strong>
+                    lakshmiaiswaryaakella@gmail.com
+                  </strong>
+                </div>
+
+              </a>
+
+
+              <a
+                href="https://github.com/aishu104"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-link"
+              >
+
+                <span class="contact-icon">GH</span>
+
+                <div>
+                  <small>GITHUB</small>
+                  <strong>
+                    github.com/aishu104
+                  </strong>
+                </div>
+
+              </a>
+
+
+              <a
+                href="https://www.linkedin.com/in/lakshmi-aiswarya-akella-95053532a/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-link"
+              >
+
+                <span class="contact-icon">in</span>
+
+                <div>
+                  <small>LINKEDIN</small>
+                  <strong>
+                    LinkedIn Profile
+                  </strong>
+                </div>
+
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <!-- CONTACT FORM -->
+          <div class="contact-form-wrapper reveal-right">
+
+            <form id="contact-form">
+
+              <div class="form-row">
+
+                <div class="form-group">
+
+                  <label for="name">
+                    Your Name
+                  </label>
+
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your name"
+                    required
+                  >
+
+                </div>
+
+
+                <div class="form-group">
+
+                  <label for="email">
+                    Email
+                  </label>
+
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                  >
+
+                </div>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="message">
+                  Message
+                </label>
+
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="6"
+                  placeholder="Write your message..."
+                  required
+                ></textarea>
+
+              </div>
+
+
+              <button
+                type="submit"
+                class="btn btn-primary submit-btn"
+              >
+                Send Message →
+              </button>
+
+
+              <div id="form-success" class="form-success">
+                ✓ Thank you! Your message is ready to be sent.
+              </div>
+
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+
+    <div class="container footer-inner">
+
+      <div class="footer-brand">
+
+        <a href="#home" class="brand">
+          <span class="brand-bracket">&lt;</span>ALA<span class="brand-bracket">/&gt;</span>
+        </a>
+
+        <p>
+          Building intelligent solutions,
+          one project at a time.
+        </p>
+
+      </div>
+
+
       <div class="footer-links">
-        <a href="mailto:lakshmiaiswaryaakella@gmail.com">Email</a>
-        <a href="https://github.com/aishu104" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/lakshmi-aiswarya-akella-95053532a/" target="_blank">LinkedIn</a>
+
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+
       </div>
-      <p class="footer-copy">© 2026 Akella Lakshmi Aiswarya. All rights reserved.</p>
+
+
+      <div class="footer-copy">
+
+        <p>
+          © 2026 Akella Lakshmi Aiswarya
+        </p>
+
+        <span>
+          Designed & built with curiosity.
+        </span>
+
+      </div>
+
     </div>
+
   </footer>
 
-  <!-- BACK TO TOP -->
-  <button id="back-top" aria-label="Back to top">↑</button>
+
+  <!-- ================= BACK TO TOP ================= -->
+  <button
+    id="back-top"
+    aria-label="Back to top"
+  >
+    ↑
+  </button>
+
 
   <script src="script.js"></script>
+
 </body>
 </html>
